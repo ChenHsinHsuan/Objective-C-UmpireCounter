@@ -112,8 +112,6 @@
 		BE26C99E18C6146700EB81D0 /* UmpireCounter */ = {
 			isa = PBXGroup;
 			children = (
-				BE26C9A718C6146700EB81D0 /* AppDelegate.h */,
-				BE26C9A818C6146700EB81D0 /* AppDelegate.m */,
 				BE26C9AA18C6146700EB81D0 /* Main.storyboard */,
 				BE26C9AD18C6146700EB81D0 /* ViewController.h */,
 				BE26C9AE18C6146700EB81D0 /* ViewController.m */,
@@ -126,6 +124,8 @@
 		BE26C99F18C6146700EB81D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE26C9A718C6146700EB81D0 /* AppDelegate.h */,
+				BE26C9A818C6146700EB81D0 /* AppDelegate.m */,
 				BE26C9A018C6146700EB81D0 /* UmpireCounter-Info.plist */,
 				BE26C9A118C6146700EB81D0 /* InfoPlist.strings */,
 				BE26C9A418C6146700EB81D0 /* main.m */,
