@@ -9,15 +9,16 @@
 #import "AddGameViewController.h"
 #import "GameListViewController.h"
 
-
 @interface AddGameViewController ()<UIPickerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate>
-@property (strong, nonatomic) IBOutlet UISegmentedControl *gameTypeSegmentedControls;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *ballTypeSegmentedControls;
 @property (strong, nonatomic) IBOutlet UITextField *guestTeamNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *homeTeamNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *fieldNameTextField;
 @property (strong, nonatomic) IBOutlet UIPickerView *inningAndTimePickerView;
+@property (strong, nonatomic) IBOutlet UIButton *createGameButton;
+
 @property NSArray *inningArr;
 @property NSArray *gameTimeArr;
-@property (strong, nonatomic) IBOutlet UIButton *createGameButton;
 
 @end
 
@@ -36,8 +37,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.inningArr = @[@"3局", @"4局", @"5局", @"6局", @"7局", @"8局", @"9局"];
-    self.gameTimeArr = @[@"30分鐘", @"40分鐘", @"50分鐘", @"60分鐘", @"70分鐘", @"80分鐘", @"90分鐘"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SettingParameter" ofType:@"plist"];
+    NSDictionary *settingDict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    self.inningArr = [[NSArray alloc] initWithArray:[settingDict objectForKey:@"inning"]];
+    self.gameTimeArr = [[NSArray alloc] initWithArray:[settingDict objectForKey:@"gameTime"]];
+    
     
     self.inningAndTimePickerView = [[UIPickerView alloc] init];
 }
@@ -47,6 +51,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)createGameButtonPressed:(id)sender {
+    NSMutableString *errMsg = [[NSMutableString alloc]init];
+    
+    if (self.guestTeamNameTextField.text.length == 0 ) {
+        [errMsg appendString: @"請輸入先攻球隊名稱\n"];
+    }
+    if (self.homeTeamNameTextField.text.length == 0) {
+        [errMsg appendString: @"請輸入後攻球隊名稱"];
+    }
+    
+    if (self.fieldNameTextField.text.length == 0) {
+        [self.fieldNameTextField setText:@"某某球場"];
+    }
+    if(errMsg.length > 0){
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:errMsg delegate:self cancelButtonTitle:nil otherButtonTitles:@"確認", nil];
+        [alertView show];
+        return;
+    }
+    
+    
+    
+}
 
 
 #pragma -segue
@@ -55,10 +81,16 @@
     if (sender != self.createGameButton) {
         return;
     }
+    
+        
     if (self.guestTeamNameTextField.text.length > 0 && self.homeTeamNameTextField.text.length > 0) {
         self.game = [[Game alloc] init];
-        self.game.guestTeamName = self.guestTeamNameTextField.text;
-        self.game.homeTeamName = self.homeTeamNameTextField.text;
+        self.game.ball_type = [self.ballTypeSegmentedControls titleForSegmentAtIndex:self.ballTypeSegmentedControls.selectedSegmentIndex];
+        self.game.guest_team_name = self.guestTeamNameTextField.text;
+        self.game.home_team_name = self.homeTeamNameTextField.text;
+        self.game.fieldName = self.fieldNameTextField.text;
+        self.game.inning = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
+        self.game.game_time = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
         self.game.completed = NO;
     }
 }
@@ -66,7 +98,7 @@
 #pragma  -PickerView delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-      return 2;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -93,5 +125,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+
 
 @end

@@ -2,17 +2,28 @@
 //  Game.h
 //  UmpireCounter
 //
-//  Created by Chen Hsin-Hsuan on 2014/3/5.
+//  Created by Chen Hsin-Hsuan on 2014/3/6.
 //  Copyright (c) 2014年 com.aircon. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class Inning;
 
 @interface Game : NSObject
-@property NSString *ballType;//球的種類
-@property NSString *homeTeamName;//主場球隊名稱
-@property NSString *guestTeamName;//客場球隊名稱
-@property NSNumber *inning;//比賽局數
-@property NSDate *gameTime;//比賽時間
-@property BOOL *completed;//是否結束
+
+@property (nonatomic, retain) NSString * ball_type;
+@property (nonatomic, retain) NSString * guest_team_name;
+@property (nonatomic, retain) NSString * home_team_name;
+@property (nonatomic, retain) NSNumber * inning;
+@property (nonatomic, retain) NSDate * game_time;
+@property (nonatomic, retain) NSString * fieldName;
+
+
+@property (nonatomic, retain) NSNumber * completed;
+@property (nonatomic, retain) NSMutableArray *inningArr;
+@property (nonatomic, retain) NSNumber * guest_score;
+@property (nonatomic, retain) NSNumber * home_score;
 @end
+

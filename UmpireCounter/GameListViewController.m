@@ -8,6 +8,7 @@
 
 #import "GameListViewController.h"
 #import "Game.h"
+#import "GameTableViewCell.h"
 #import "AddGameViewController.h"
 @interface GameListViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *gameArr;
@@ -71,20 +72,26 @@
     //製作可重復利用的表格欄位Cell
     static NSString *CellIdentifier = @"GameCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[GameTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     //設定欄位的內容與類型
     Game *game = [self.gameArr objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = game.guestTeamName;
-    if (game.completed) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+//    cell.textLabel.text = game.guest_team_name;
+//    if (game.completed) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
+
+    cell.guestTeamNameTextField.text =  game.guest_team_name;
+    cell.guestScoreTextField.text = [game.guest_score stringValue];
+    cell.homeTeamNameTextField.text = game.home_team_name;
+    cell.homeScoreTextField.text = [game.home_score stringValue];
+    cell.fieldNameTextField.text = game.fieldName;
 
     return cell;
 }

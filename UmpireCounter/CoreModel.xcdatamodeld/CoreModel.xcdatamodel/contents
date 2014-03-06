@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GameDataModel" representedClassName="GameDataModel" syncable="YES">
+        <attribute name="ball_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="game_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guest_score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guest_team_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="home_score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="home_team_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="inningArr" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="inningDetail" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="InningDataModel" inverseName="belongGame" inverseEntity="InningDataModel" syncable="YES"/>
+    </entity>
+    <entity name="InningDataModel" representedClassName="InningDataModel" syncable="YES">
+        <attribute name="kd" optional="YES" attributeType="String" minValueString="1" maxValueString="1" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="99" defaultValueString="0" syncable="YES"/>
+        <attribute name="sn" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="9" syncable="YES"/>
+        <relationship name="belongGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameDataModel" inverseName="inningDetail" inverseEntity="GameDataModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GameDataModel" positionX="160" positionY="192" width="128" height="193"/>
+        <element name="InningDataModel" positionX="-270" positionY="171" width="128" height="103"/>
+    </elements>
+</model>
