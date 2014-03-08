@@ -1,5 +1,5 @@
 //
-//  CounterViewController.h
+//  GameDetailViewController.h
 //  UmpireCounter
 //
 //  Created by Chen Hsin-Hsuan on 2014/3/8.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
-#import "CounterViewController.h"
-@interface CounterViewController : UIViewController
+@interface GameDetailViewController : UIViewController
 @property Game *game;
-@property CounterViewController *tabBarController;
 @end

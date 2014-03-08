@@ -10,9 +10,10 @@
 #import "Game.h"
 #import "GameTableViewCell.h"
 #import "AddGameViewController.h"
+#import "GameDetailViewController.h"
 @interface GameListViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *gameArr;
-
+@property Game *selectGame;
 
 @property (strong, nonatomic) IBOutlet UITableView *gameListTableView;
 @end
@@ -94,5 +95,26 @@
     cell.fieldNameTextField.text = game.fieldName;
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    GameTableViewCell *cell = (GameTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if(cell != nil){
+        self.selectGame = [self.gameArr objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"gameDetail" sender:cell];
+    }
+
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"gameDetail"]){
+        GameDetailViewController *destVC = [segue destinationViewController];
+        destVC.game = self.selectGame;
+    }
 }
 @end
