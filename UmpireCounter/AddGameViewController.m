@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *inningAndTimePickerView;
 @property (strong, nonatomic) IBOutlet UIButton *createGameButton;
 
+
 @property NSArray *inningArr;
 @property NSArray *gameTimeArr;
 
@@ -51,28 +52,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)createGameButtonPressed:(id)sender {
-    NSMutableString *errMsg = [[NSMutableString alloc]init];
-    
-    if (self.guestTeamNameTextField.text.length == 0 ) {
-        [errMsg appendString: @"請輸入先攻球隊名稱\n"];
-    }
-    if (self.homeTeamNameTextField.text.length == 0) {
-        [errMsg appendString: @"請輸入後攻球隊名稱"];
-    }
-    
-    if (self.fieldNameTextField.text.length == 0) {
-        [self.fieldNameTextField setText:@"某某球場"];
-    }
-    if(errMsg.length > 0){
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:errMsg delegate:self cancelButtonTitle:nil otherButtonTitles:@"確認", nil];
-        [alertView show];
-        return;
-    }
-    
-    
-    
-}
 
 
 #pragma -segue
@@ -82,17 +61,28 @@
         return;
     }
     
-        
-    if (self.guestTeamNameTextField.text.length > 0 && self.homeTeamNameTextField.text.length > 0) {
-        self.game = [[Game alloc] init];
-        self.game.ball_type = [self.ballTypeSegmentedControls titleForSegmentAtIndex:self.ballTypeSegmentedControls.selectedSegmentIndex];
-        self.game.guest_team_name = self.guestTeamNameTextField.text;
-        self.game.home_team_name = self.homeTeamNameTextField.text;
-        self.game.fieldName = self.fieldNameTextField.text;
-        self.game.inning = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
-        self.game.game_time = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
-        self.game.completed = NO;
+    
+    if(self.guestTeamNameTextField.text.length == 0){
+        self.guestTeamNameTextField.text = @"先攻";
     }
+    
+    if (self.homeTeamNameTextField.text.length == 0) {
+        self.homeTeamNameTextField.text = @"後攻";
+    }
+    
+    if (self.fieldNameTextField.text.length == 0) {
+        self.fieldNameTextField.text = @"某某球場";
+    }
+        
+
+    self.game = [[Game alloc] init];
+    self.game.ball_type = [self.ballTypeSegmentedControls titleForSegmentAtIndex:self.ballTypeSegmentedControls.selectedSegmentIndex];
+    self.game.guest_team_name = self.guestTeamNameTextField.text;
+    self.game.home_team_name = self.homeTeamNameTextField.text;
+    self.game.fieldName = self.fieldNameTextField.text;
+    self.game.inning = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
+    self.game.game_time = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
+    self.game.completed = NO;
 }
 
 #pragma  -PickerView delegate
