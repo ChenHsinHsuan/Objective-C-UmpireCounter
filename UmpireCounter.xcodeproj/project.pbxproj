@@ -19,6 +19,8 @@
 		BE26C9BA18C6146700EB81D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE26C99C18C6146700EB81D0 /* UIKit.framework */; };
 		BE26C9C218C6146700EB81D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE26C9C018C6146700EB81D0 /* InfoPlist.strings */; };
 		BE26C9C418C6146700EB81D0 /* UmpireCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE26C9C318C6146700EB81D0 /* UmpireCounterTests.m */; };
+		BE3A691C18CC2DC000665EF4 /* ScoreBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */; };
+		BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */; };
 		BE53964218C8C68A00B9942A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53964118C8C68A00B9942A /* MapKit.framework */; };
 		BE86243018C8482200F1E07F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86242F18C8482200F1E07F /* Game.m */; };
 		BE86243318C8482200F1E07F /* Inning.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86243218C8482200F1E07F /* Inning.m */; };
@@ -62,6 +64,10 @@
 		BE26C9BF18C6146700EB81D0 /* UmpireCounterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UmpireCounterTests-Info.plist"; sourceTree = "<group>"; };
 		BE26C9C118C6146700EB81D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE26C9C318C6146700EB81D0 /* UmpireCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UmpireCounterTests.m; sourceTree = "<group>"; };
+		BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoxViewController.h; sourceTree = "<group>"; };
+		BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoxViewController.m; sourceTree = "<group>"; };
+		BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoxCell.h; sourceTree = "<group>"; };
+		BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoxCell.m; sourceTree = "<group>"; };
 		BE53964118C8C68A00B9942A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BE86242E18C8482200F1E07F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		BE86242F18C8482200F1E07F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
@@ -117,6 +123,10 @@
 		BE26C98C18C6146700EB81D0 = {
 			isa = PBXGroup;
 			children = (
+				BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */,
+				BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */,
+				BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */,
+				BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */,
 				BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */,
 				BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */,
 				BE26C99E18C6146700EB81D0 /* UmpireCounter */,
@@ -312,10 +322,12 @@
 				BEB6816818CB0E2600A8C1AD /* GameDetailViewController.m in Sources */,
 				BEB6816518CAFF2F00A8C1AD /* CounterViewController.m in Sources */,
 				BE86243318C8482200F1E07F /* Inning.m in Sources */,
+				BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */,
 				BE26C9A518C6146700EB81D0 /* main.m in Sources */,
 				BE86243018C8482200F1E07F /* Game.m in Sources */,
 				BEBC94B718C75DDE0094513E /* AddGameViewController.m in Sources */,
 				BE86243A18C8749F00F1E07F /* GameTableViewCell.m in Sources */,
+				BE3A691C18CC2DC000665EF4 /* ScoreBoxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

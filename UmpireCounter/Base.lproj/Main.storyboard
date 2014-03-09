@@ -286,7 +286,7 @@
             </objects>
             <point key="canvasLocation" x="174" y="438"/>
         </scene>
-        <!--Counter View Controller - 局數-->
+        <!--Counter View Controller - 計數器-->
         <scene sceneID="Xqp-L0-9k6">
             <objects>
                 <viewController id="7Ro-21-jlk" customClass="CounterViewController" sceneMemberID="viewController">
@@ -410,10 +410,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="m42-tB-tsk"/>
-                    <navigationItem key="navigationItem" title="局數" id="JmZ-zy-VTp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Mot-cN-uP0"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="計數器" image="pulley-50" id="m42-tB-tsk"/>
+                    <navigationItem key="navigationItem" id="JmZ-zy-VTp"/>
                     <connections>
                         <outlet property="B1" destination="bT8-E3-pLX" id="eNt-LV-Xbe"/>
                         <outlet property="B2" destination="djj-fS-gSH" id="qfk-h5-s4h"/>
@@ -429,12 +427,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DU5-xV-rtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="40"/>
+            <point key="canvasLocation" x="1042" y="8"/>
         </scene>
-        <!--View Controller - 計分板-->
+        <!--Score Box View Controller - 計分板-->
         <scene sceneID="sQ8-58-u0W">
             <objects>
-                <viewController id="piN-xN-kU2" sceneMemberID="viewController">
+                <viewController id="piN-xN-kU2" customClass="ScoreBoxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mrd-KH-b9i"/>
                         <viewControllerLayoutGuide type="bottom" id="el5-hB-wJQ"/>
@@ -443,42 +441,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先攻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-if-Ges">
-                                <rect key="frame" x="58" y="67" width="34" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-if-Ges">
+                                <rect key="frame" x="0.0" y="74" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="後攻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ4-Of-0co">
-                                <rect key="frame" x="232" y="67" width="34" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="後攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ4-Of-0co">
+                                <rect key="frame" x="170" y="74" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QB1-1o-ZRz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QB1-1o-ZRz">
                                 <rect key="frame" x="-5" y="96" width="330" height="472"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="oBx-8C-T8A">
-                                        <rect key="frame" x="0.0" y="22" width="330" height="72"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScoreBoxCell" rowHeight="59" id="oBx-8C-T8A" customClass="ScoreBoxCell">
+                                        <rect key="frame" x="0.0" y="22" width="330" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBx-8C-T8A" id="Uyn-bk-nAp">
-                                            <rect key="frame" x="0.0" y="0.0" width="330" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="330" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka0-dp-apb">
+                                                    <rect key="frame" x="125" y="13" width="80" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" red="1" green="0.98139389990000003" blue="0.96603248269999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHt-nu-vRs">
+                                                    <rect key="frame" x="70" y="-2" width="28" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-od-mxW">
+                                                    <rect key="frame" x="236" y="-2" width="28" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.4051094890510949" blue="0.26824817519999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.52757185220000002" blue="0.26824817519999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="guestScoreTextField" destination="ZHt-nu-vRs" id="76X-5A-aLb"/>
+                                            <outlet property="homeScoreTextField" destination="0Od-od-mxW" id="Gd0-Ra-B1R"/>
+                                            <outlet property="inningTextField" destination="ka0-dp-apb" id="nJf-s0-Ge3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="piN-xN-kU2" id="eam-Yl-w6i"/>
+                                    <outlet property="delegate" destination="piN-xN-kU2" id="EbY-i2-D7g"/>
+                                </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.52757185218978087" blue="0.26824817519999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="y6W-WW-Pxt"/>
+                    <tabBarItem key="tabBarItem" title="計分板" image="display-50" id="y6W-WW-Pxt"/>
                     <navigationItem key="navigationItem" title="計分板" id="nN0-bM-3wk"/>
+                    <connections>
+                        <outlet property="guestNameLabel" destination="hvV-if-Ges" id="49Y-90-6Fc"/>
+                        <outlet property="homeNameLabel" destination="fJ4-Of-0co" id="InU-QR-xL4"/>
+                        <outlet property="tableView" destination="QB1-1o-ZRz" id="5W0-hm-a7J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJM-Wa-ys3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="750"/>
+            <point key="canvasLocation" x="1042" y="719"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="hJ5-C4-vbi">
@@ -502,11 +541,12 @@
         <!--Counter Tab Bar View Controller-->
         <scene sceneID="PNY-9J-C5R">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G7N-sf-s4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="rR6-PB-BMd" customClass="CounterTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="r47-TR-d12"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="r47-TR-d12">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="ZjW-16-dNk"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="79B-jY-4m7">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -517,13 +557,16 @@
                         <segue destination="piN-xN-kU2" kind="relationship" relationship="viewControllers" id="4ug-qx-Ve4"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7N-sf-s4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="569" y="438"/>
+            <point key="canvasLocation" x="555" y="438"/>
         </scene>
     </scenes>
     <resources>
         <image name="black" width="400" height="400"/>
+        <image name="display-50" width="32" height="32"/>
         <image name="green" width="400" height="400"/>
+        <image name="pulley-50" width="32" height="32"/>
         <image name="red" width="400" height="400"/>
         <image name="yellow" width="400" height="400"/>
     </resources>

@@ -10,9 +10,7 @@
 
 
 @interface Inning : NSObject
-
-@property (nonatomic, retain) NSString * kd;
-@property (nonatomic, retain) NSNumber * score;
-@property (nonatomic, retain) NSNumber * sn;
-
+@property int inning;
+@property int guestScore;
+@property int homeScore;
 @end
