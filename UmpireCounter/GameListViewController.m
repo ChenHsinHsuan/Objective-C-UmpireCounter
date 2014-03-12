@@ -88,11 +88,11 @@
 //        cell.accessoryType = UITableViewCellAccessoryNone;
 //    }
 
-    cell.guestTeamNameTextField.text =  game.guest_team_name;
-    cell.guestScoreTextField.text = [game.guest_score stringValue];
-    cell.homeTeamNameTextField.text = game.home_team_name;
-    cell.homeScoreTextField.text = [game.home_score stringValue];
-    cell.fieldNameTextField.text = game.fieldName;
+    cell.guestTeamNameLabel.text =  game.guest_team_name;
+    cell.guestScoreLabel.text = [game.guest_score stringValue];
+    cell.homeTeamNameLabel.text = game.home_team_name;
+    cell.homeScoreLabel.text = [game.home_score stringValue];
+    cell.fieldNameLabel.text = game.fieldName;
 
     return cell;
 }

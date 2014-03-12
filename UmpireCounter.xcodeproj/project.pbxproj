@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BE26C99918C6146700EB81D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE26C99818C6146700EB81D0 /* Foundation.framework */; };
-		BE26C99B18C6146700EB81D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE26C99A18C6146700EB81D0 /* CoreGraphics.framework */; };
 		BE26C99D18C6146700EB81D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE26C99C18C6146700EB81D0 /* UIKit.framework */; };
 		BE26C9A318C6146700EB81D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE26C9A118C6146700EB81D0 /* InfoPlist.strings */; };
 		BE26C9A518C6146700EB81D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE26C9A418C6146700EB81D0 /* main.m */; };
@@ -21,7 +20,6 @@
 		BE26C9C418C6146700EB81D0 /* UmpireCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE26C9C318C6146700EB81D0 /* UmpireCounterTests.m */; };
 		BE3A691C18CC2DC000665EF4 /* ScoreBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */; };
 		BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */; };
-		BE53964218C8C68A00B9942A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53964118C8C68A00B9942A /* MapKit.framework */; };
 		BE86243018C8482200F1E07F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86242F18C8482200F1E07F /* Game.m */; };
 		BE86243318C8482200F1E07F /* Inning.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86243218C8482200F1E07F /* Inning.m */; };
 		BE86243518C8485700F1E07F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE86243418C8485700F1E07F /* CoreData.framework */; };
@@ -34,7 +32,7 @@
 		BEB6816D18CB3EA900A8C1AD /* CounterTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */; };
 		BEBC94B118C75BB10094513E /* GameListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B018C75BB10094513E /* GameListViewController.m */; };
 		BEBC94B718C75DDE0094513E /* AddGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B618C75DDE0094513E /* AddGameViewController.m */; };
-		BEBC94BA18C838C20094513E /* CoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B818C838C20094513E /* CoreModel.xcdatamodeld */; };
+		BEBC94BA18C838C20094513E /* MOM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B818C838C20094513E /* MOM.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +62,10 @@
 		BE26C9BF18C6146700EB81D0 /* UmpireCounterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UmpireCounterTests-Info.plist"; sourceTree = "<group>"; };
 		BE26C9C118C6146700EB81D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE26C9C318C6146700EB81D0 /* UmpireCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UmpireCounterTests.m; sourceTree = "<group>"; };
-		BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoxViewController.h; sourceTree = "<group>"; };
-		BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoxViewController.m; sourceTree = "<group>"; };
-		BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoxCell.h; sourceTree = "<group>"; };
-		BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoxCell.m; sourceTree = "<group>"; };
+		BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreBoxViewController.h; path = ../ScoreBoxViewController.h; sourceTree = "<group>"; };
+		BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreBoxViewController.m; path = ../ScoreBoxViewController.m; sourceTree = "<group>"; };
+		BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreBoxCell.h; path = ../ScoreBoxCell.h; sourceTree = "<group>"; };
+		BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreBoxCell.m; path = ../ScoreBoxCell.m; sourceTree = "<group>"; };
 		BE53964118C8C68A00B9942A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BE86242E18C8482200F1E07F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		BE86242F18C8482200F1E07F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
@@ -84,13 +82,13 @@
 		BEB6816618CB0E2600A8C1AD /* GameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDetailViewController.h; sourceTree = "<group>"; };
 		BEB6816718CB0E2600A8C1AD /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailViewController.m; sourceTree = "<group>"; };
 		BEB6816918CB389700A8C1AD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterTabBarViewController.h; sourceTree = "<group>"; };
-		BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterTabBarViewController.m; sourceTree = "<group>"; };
+		BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CounterTabBarViewController.h; path = ../CounterTabBarViewController.h; sourceTree = "<group>"; };
+		BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CounterTabBarViewController.m; path = ../CounterTabBarViewController.m; sourceTree = "<group>"; };
 		BEBC94AF18C75BB10094513E /* GameListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListViewController.h; sourceTree = "<group>"; };
 		BEBC94B018C75BB10094513E /* GameListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListViewController.m; sourceTree = "<group>"; };
 		BEBC94B518C75DDE0094513E /* AddGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGameViewController.h; sourceTree = "<group>"; };
 		BEBC94B618C75DDE0094513E /* AddGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGameViewController.m; sourceTree = "<group>"; };
-		BEBC94B918C838C20094513E /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
+		BEBC94B918C838C20094513E /* MOM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MOM.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB6816A18CB389700A8C1AD /* AudioToolbox.framework in Frameworks */,
-				BE53964218C8C68A00B9942A /* MapKit.framework in Frameworks */,
 				BE86243518C8485700F1E07F /* CoreData.framework in Frameworks */,
-				BE26C99B18C6146700EB81D0 /* CoreGraphics.framework in Frameworks */,
 				BE26C99D18C6146700EB81D0 /* UIKit.framework in Frameworks */,
 				BE26C99918C6146700EB81D0 /* Foundation.framework in Frameworks */,
 			);
@@ -123,12 +119,6 @@
 		BE26C98C18C6146700EB81D0 = {
 			isa = PBXGroup;
 			children = (
-				BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */,
-				BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */,
-				BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */,
-				BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */,
-				BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */,
-				BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */,
 				BE26C99E18C6146700EB81D0 /* UmpireCounter */,
 				BE26C9BD18C6146700EB81D0 /* UmpireCounterTests */,
 				BE26C99718C6146700EB81D0 /* Frameworks */,
@@ -174,7 +164,7 @@
 				BE86243118C8482200F1E07F /* Inning.h */,
 				BE86243218C8482200F1E07F /* Inning.m */,
 				BE86242F18C8482200F1E07F /* Game.m */,
-				BEBC94B818C838C20094513E /* CoreModel.xcdatamodeld */,
+				BEBC94B818C838C20094513E /* MOM.xcdatamodeld */,
 				BE86243618C8488E00F1E07F /* SettingParameter.plist */,
 				BE86243818C8749F00F1E07F /* GameTableViewCell.h */,
 				BE86243918C8749F00F1E07F /* GameTableViewCell.m */,
@@ -182,6 +172,12 @@
 				BEB6816418CAFF2F00A8C1AD /* CounterViewController.m */,
 				BEB6816618CB0E2600A8C1AD /* GameDetailViewController.h */,
 				BEB6816718CB0E2600A8C1AD /* GameDetailViewController.m */,
+				BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */,
+				BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */,
+				BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */,
+				BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */,
+				BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */,
+				BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */,
 			);
 			path = UmpireCounter;
 			sourceTree = "<group>";
@@ -261,7 +257,7 @@
 		BE26C98D18C6146700EB81D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = com.aircon;
 				TargetAttributes = {
 					BE26C9B518C6146700EB81D0 = {
@@ -316,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEBC94B118C75BB10094513E /* GameListViewController.m in Sources */,
-				BEBC94BA18C838C20094513E /* CoreModel.xcdatamodeld in Sources */,
+				BEBC94BA18C838C20094513E /* MOM.xcdatamodeld in Sources */,
 				BE26C9A918C6146700EB81D0 /* AppDelegate.m in Sources */,
 				BEB6816D18CB3EA900A8C1AD /* CounterTabBarViewController.m in Sources */,
 				BEB6816818CB0E2600A8C1AD /* GameDetailViewController.m in Sources */,
@@ -381,7 +377,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -420,7 +415,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -478,7 +472,6 @@
 		BE26C9CB18C6146700EB81D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UmpireCounter.app/UmpireCounter";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -501,7 +494,6 @@
 		BE26C9CC18C6146700EB81D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UmpireCounter.app/UmpireCounter";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -550,13 +542,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BEBC94B818C838C20094513E /* CoreModel.xcdatamodeld */ = {
+		BEBC94B818C838C20094513E /* MOM.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BEBC94B918C838C20094513E /* CoreModel.xcdatamodel */,
+				BEBC94B918C838C20094513E /* MOM.xcdatamodel */,
 			);
-			currentVersion = BEBC94B918C838C20094513E /* CoreModel.xcdatamodel */;
-			path = CoreModel.xcdatamodeld;
+			currentVersion = BEBC94B918C838C20094513E /* MOM.xcdatamodel */;
+			path = MOM.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

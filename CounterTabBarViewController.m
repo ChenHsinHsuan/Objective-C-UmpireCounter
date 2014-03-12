@@ -11,7 +11,7 @@
 #import "ScoreBoxViewController.h"
 #import "ScoreBoxCell.h"
 #import "Inning.h"
-@interface CounterTabBarViewController ()<UITabBarControllerDelegate>
+@interface CounterTabBarViewController ()<UITabBarControllerDelegate, UIActionSheetDelegate>
 @end
 
 @implementation CounterTabBarViewController
@@ -42,7 +42,21 @@
 }
 
 
+- (IBAction)actionButtonPressed:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                             delegate:self
+                                                    cancelButtonTitle:@"繼續"
+                                               destructiveButtonTitle:@"結束比賽"
+                                                    otherButtonTitles:nil];
+    [actionSheet showInView:self.view];
+}
 
-
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0){
+        //結束比賽
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 
 @end

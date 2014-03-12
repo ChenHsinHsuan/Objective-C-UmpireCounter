@@ -9,7 +9,7 @@
 #import "AddGameViewController.h"
 #import "GameListViewController.h"
 
-@interface AddGameViewController ()<UIPickerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate>
+@interface AddGameViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *ballTypeSegmentedControls;
 @property (strong, nonatomic) IBOutlet UITextField *guestTeamNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *homeTeamNameTextField;
@@ -38,13 +38,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SettingParameter" ofType:@"plist"];
     NSDictionary *settingDict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.inningArr = [[NSArray alloc] initWithArray:[settingDict objectForKey:@"inning"]];
     self.gameTimeArr = [[NSArray alloc] initWithArray:[settingDict objectForKey:@"gameTime"]];
     
-    
-    self.inningAndTimePickerView = [[UIPickerView alloc] init];
+    [self.inningAndTimePickerView selectRow:8 inComponent:0 animated:YES];
+    [self.inningAndTimePickerView selectRow:9 inComponent:1 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,6 +87,19 @@
     self.game.completed = NO;
 }
 
+#pragma -segment control
+- (IBAction)ballTypeChange:(id)sender {
+    if(self.ballTypeSegmentedControls.selectedSegmentIndex == 0){
+        //棒球
+        [self.inningAndTimePickerView selectRow:8 inComponent:0 animated:YES];
+        [self.inningAndTimePickerView selectRow:9 inComponent:1 animated:YES];
+    }else{
+        //壘球
+        [self.inningAndTimePickerView selectRow:6 inComponent:0 animated:YES];
+        [self.inningAndTimePickerView selectRow:3 inComponent:1 animated:YES];
+    }
+}
+
 #pragma  -PickerView delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -102,6 +117,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+
     if (component == 0) {
         return self.inningArr[row];
     }else{

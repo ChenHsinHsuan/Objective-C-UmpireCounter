@@ -17,8 +17,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *S2;
 @property (strong, nonatomic) IBOutlet UIButton *O1;
 @property (strong, nonatomic) IBOutlet UIButton *O2;
-@property (strong, nonatomic) IBOutlet UILabel *scoreTextField;
-@property (strong, nonatomic) IBOutlet UILabel *attackingTeamNameTextField;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *attackingTeamNameLabel;
 @property (strong, nonatomic) IBOutlet UIStepper *scoreStepper;
 
 @property int bCount;
@@ -81,14 +81,14 @@
 {
     if(!self.inningKd){
         self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局上", self.inning];
-        self.attackingTeamNameTextField.text = self.game.guest_team_name;
+        self.attackingTeamNameLabel.text = self.game.guest_team_name;
     }else{
         self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局下", self.inning];
-        self.attackingTeamNameTextField.text = self.game.home_team_name;
+        self.attackingTeamNameLabel.text = self.game.home_team_name;
     }
     
     self.scoreStepper.value = self.scoreCount;
-    self.scoreTextField.text = [NSString stringWithFormat:@"%d", self.scoreCount];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.scoreCount];
     [self refreshLight];
 }
 
@@ -282,7 +282,7 @@
 - (IBAction)stepperPressed:(UIStepper *)sender {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     self.scoreCount = sender.value;
-    self.scoreTextField.text = [NSString stringWithFormat:@"%d", self.scoreCount];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.scoreCount];
     
     Inning *inning = self.game.inningArr[self.inning-1];
     if(!self.inningKd){

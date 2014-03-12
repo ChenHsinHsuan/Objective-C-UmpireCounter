@@ -10,9 +10,9 @@
 #import "Game.h"
 @interface GameTableViewCell : UITableViewCell
 @property Game *game;
-@property (strong, nonatomic) IBOutlet UILabel *guestTeamNameTextField;
-@property (strong, nonatomic) IBOutlet UILabel *homeTeamNameTextField;
-@property (strong, nonatomic) IBOutlet UILabel *guestScoreTextField;
-@property (strong, nonatomic) IBOutlet UILabel *homeScoreTextField;
-@property (strong, nonatomic) IBOutlet UILabel *fieldNameTextField;
+@property (strong, nonatomic) IBOutlet UILabel *guestTeamNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *homeTeamNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *guestScoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *homeScoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *fieldNameLabel;
 @end

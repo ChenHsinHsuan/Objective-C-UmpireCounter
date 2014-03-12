@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Game" representedClassName="GameDataModel" syncable="YES">
+        <attribute name="ball_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="game_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guest_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guest_score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="home_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="home_score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="inning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="total_time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Inning" representedClassName="InningDataModel" syncable="YES">
+        <attribute name="kd" optional="YES" attributeType="String" minValueString="1" maxValueString="1" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="99" defaultValueString="0" syncable="YES"/>
+        <attribute name="sn" optional="YES" attributeType="Integer 16" minValueString="1" maxValueString="9" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-513" positionY="57" width="128" height="178"/>
+        <element name="Inning" positionX="-135" positionY="198" width="128" height="88"/>
+    </elements>
+</model>
