@@ -7,8 +7,7 @@
 //
 
 #import "AddGameViewController.h"
-#import "GameListViewController.h"
-
+#import "AppDelegate.h"
 @interface AddGameViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UISegmentedControl *ballTypeSegmentedControls;
 @property (strong, nonatomic) IBOutlet UITextField *guestTeamNameTextField;
@@ -77,14 +76,15 @@
     }
         
 
-    self.game = [[Game alloc] init];
-    self.game.ball_type = [self.ballTypeSegmentedControls titleForSegmentAtIndex:self.ballTypeSegmentedControls.selectedSegmentIndex];
-    self.game.guest_team_name = self.guestTeamNameTextField.text;
-    self.game.home_team_name = self.homeTeamNameTextField.text;
+    self.game.ballType = [self.ballTypeSegmentedControls titleForSegmentAtIndex:self.ballTypeSegmentedControls.selectedSegmentIndex];
+    self.game.guestName = self.guestTeamNameTextField.text;
+    self.game.homeName = self.homeTeamNameTextField.text;
     self.game.fieldName = self.fieldNameTextField.text;
-    self.game.inning = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
-    self.game.game_time = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
+    self.game.gfTm = [NSDate date];
+    self.game.inningSet = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
+    self.game.timeSet = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
     self.game.completed = NO;
+    
 }
 
 #pragma -segment control

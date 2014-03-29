@@ -2,7 +2,7 @@
 //  Game.m
 //  UmpireCounter
 //
-//  Created by Chen Hsin-Hsuan on 2014/3/6.
+//  Created by Chen Hsin-Hsuan on 2014/3/22.
 //  Copyright (c) 2014年 com.aircon. All rights reserved.
 //
 
@@ -12,6 +12,17 @@
 
 @implementation Game
 
-
+@dynamic ballType;
+@dynamic completed;
+@dynamic endTm;
+@dynamic fieldName;
+@dynamic gfTm;
+@dynamic guestName;
+@dynamic guestScore;
+@dynamic homeName;
+@dynamic homeScore;
+@dynamic inningSet;
+@dynamic timeSet;
+@dynamic inningDetail;
 
 @end

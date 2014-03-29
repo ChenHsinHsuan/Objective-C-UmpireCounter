@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface GameListViewController : UIViewController
-
-- (IBAction)unwindToGameList:(UIStoryboardSegue *)segue;
+@interface GameListViewController : UIViewController<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+- (IBAction)addGameToList:(UIStoryboardSegue *)segue;
 @end

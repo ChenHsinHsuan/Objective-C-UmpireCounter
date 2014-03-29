@@ -11,11 +11,11 @@
 #import "GameTableViewCell.h"
 #import "AddGameViewController.h"
 #import "GameDetailViewController.h"
-@interface GameListViewController ()<UITableViewDataSource, UITableViewDelegate>
-@property NSMutableArray *gameArr;
-@property Game *selectGame;
-
+#import "AppDelegate.h"
+@interface GameListViewController ()
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UITableView *gameListTableView;
+@property Game *selectGame;
 @end
 
 @implementation GameListViewController
@@ -33,28 +33,73 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.gameArr = [[NSMutableArray alloc] init];
-
 }
+
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [self.gameListTableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
-- (IBAction)unwindToGameList:(UIStoryboardSegue *)segue
-{
-    AddGameViewController *source = [segue sourceViewController];
-    Game *game = source.game;
-    if (game != nil) {
-        [self.gameArr addObject:game];
-        [self.gameListTableView reloadData];
+
+
+#pragma mark - Fetched results controller
+
+/*
+ Returns the fetched results controller. Creates and configures the controller if necessary.
+ */
+- (NSFetchedResultsController *)fetchedResultsController {
+    // 如果查詢結果已經存在就直接返回_fetchedResultsController
+    if (_fetchedResultsController != nil)
+    {
+        return _fetchedResultsController;
     }
+    
+    // 1.創建NSFetchRequest對象（相當於SQL語句）
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // 2.創建查詢實體（相當於設置查詢哪個表）
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // 設置獲取數據的批數
+//    [fetchRequest setFetchBatchSize:20];
+    
+    // 3.創建排序描述符（ascending：是否升序）
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"gfTm" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // 根據fetchRequest和managedObjectContext來創建aFetchedResultsController對象，並設置緩存名字為"Master"
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+
+    return _fetchedResultsController;
 }
 
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.gameListTableView beginUpdates];
+}
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.gameListTableView endUpdates];
+}
 
 
 #pragma -table delegate
@@ -65,7 +110,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.gameArr.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,20 +125,21 @@
     }
     
     //設定欄位的內容與類型
-    Game *game = [self.gameArr objectAtIndex:indexPath.row];
-    
-//    cell.textLabel.text = game.guest_team_name;
-//    if (game.completed) {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
+    Game *game = [_fetchedResultsController objectAtIndexPath:indexPath];
 
-    cell.guestTeamNameLabel.text =  game.guest_team_name;
-    cell.guestScoreLabel.text = [game.guest_score stringValue];
-    cell.homeTeamNameLabel.text = game.home_team_name;
-    cell.homeScoreLabel.text = [game.home_score stringValue];
+    cell.guestTeamNameLabel.text =  game.guestName;
+    cell.guestScoreLabel.text = game.guestScore;
+    cell.homeTeamNameLabel.text = game.homeName;
+    cell.homeScoreLabel.text = game.homeScore;
     cell.fieldNameLabel.text = game.fieldName;
+
+    
+    //    cell.textLabel.text = game.guest_team_name;
+    //    if (game.completed) {
+    //        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    //    } else {
+    //        cell.accessoryType = UITableViewCellAccessoryNone;
+    //    }
 
     return cell;
 }
@@ -102,19 +149,65 @@
     
     GameTableViewCell *cell = (GameTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if(cell != nil){
-        self.selectGame = [self.gameArr objectAtIndex:indexPath.row];
+        self.selectGame =  [_fetchedResultsController objectAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"gameDetail" sender:cell];
     }
 
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //判斷編輯表格的類型為「刪除」
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Game *gameToDelete = [_fetchedResultsController objectAtIndexPath:indexPath];
+        NSManagedObjectContext * context = [_fetchedResultsController managedObjectContext];
+        [context deleteObject:gameToDelete];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+
+    }
+
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    [self.gameListTableView reloadData];
+}
+
+#pragma mark - segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
     if([segue.identifier isEqualToString:@"gameDetail"]){
         GameDetailViewController *destVC = [segue destinationViewController];
         destVC.game = self.selectGame;
+    }
+    
+    if([segue.identifier isEqualToString:@"AddGame"]){
+        Game *newGame = (Game *)[NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.managedObjectContext];
+        AddGameViewController *addGameVC = [segue destinationViewController];
+        addGameVC.game = newGame;
+    }
+
+}
+
+- (IBAction)addGameToList:(UIStoryboardSegue *)segue
+{
+    NSError *error;
+    if (_managedObjectContext != nil) {
+        if ([_managedObjectContext hasChanges] && ![_managedObjectContext save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
     }
 }
 @end

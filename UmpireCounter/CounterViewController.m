@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *attackingTeamNameLabel;
 @property (strong, nonatomic) IBOutlet UIStepper *scoreStepper;
 
+
+@property Inning *nowInning;
 @property int bCount;
 @property int sCount;
 @property int oCount;
@@ -46,13 +48,16 @@
     [self initLightAndScore];
     self.inning = 1;
     self.inningKd = NO;//NO:上半局  YES:下半局
-
-    if(self.game.inningArr == nil){
-        self.game.inningArr = [[NSMutableArray alloc]init];
-        Inning *inning = [[Inning alloc]init];
-        inning.inning = self.inning;
-        [self.game.inningArr addObject:inning];
+    
+    if(self.game.inningDetail == nil || self.game.inningDetail.count == 0){
+        NSManagedObjectContext *context = [self.game managedObjectContext];
+         Inning *inning = (Inning *)[NSEntityDescription insertNewObjectForEntityForName:@"Inning" inManagedObjectContext:context];
+        inning.sn = [NSString stringWithFormat:@"%d", self.inning ];
+        [self.game addInningDetailObject:inning];
+    
+        _nowInning = inning;
     }
+    
     
     [self refreshInfo];
 }
@@ -66,7 +71,7 @@
 
 - (void) initLightAndScore
 {
-    if([self.game.ball_type isEqualToString: @"棒球"]){
+    if([self.game.ballType isEqualToString: @"棒球"]){
         self.bCount = 0;
         self.sCount = 0;
     }else{
@@ -81,10 +86,10 @@
 {
     if(!self.inningKd){
         self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局上", self.inning];
-        self.attackingTeamNameLabel.text = self.game.guest_team_name;
+        self.attackingTeamNameLabel.text = self.game.guestName;
     }else{
         self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局下", self.inning];
-        self.attackingTeamNameLabel.text = self.game.home_team_name;
+        self.attackingTeamNameLabel.text = self.game.homeName;
     }
     
     self.scoreStepper.value = self.scoreCount;
@@ -156,13 +161,12 @@
             break;
     }
 }
-
 - (void) doBCount
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     self.bCount++;
     if(self.bCount > 3 ){
-        if([self.game.ball_type isEqualToString: @"棒球"]){
+        if([self.game.ballType isEqualToString: @"棒球"]){
             self.sCount = 0;
             self.bCount = 0;
         }else{
@@ -177,7 +181,7 @@
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     self.sCount++;
     if( self.sCount > 2){
-        if([self.game.ball_type isEqualToString: @"棒球"]){
+        if([self.game.ballType isEqualToString: @"棒球"]){
             self.sCount = 0;
             self.bCount = 0;
         }else{
@@ -193,7 +197,7 @@
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     self.oCount++;
     if(self.oCount > 2){
-        if([self.game.ball_type isEqualToString: @"棒球"]){
+        if([self.game.ballType isEqualToString: @"棒球"]){
             self.bCount = 0;
             self.sCount = 0;
         }else{
@@ -221,14 +225,14 @@
 - (void)changeInning
 {
     //記錄每局的得分狀況
-    Inning *inning = self.game.inningArr[self.inning-1];
-    
+//    Inning *inning = self.game.inningDetail.[self.inning-1];
+//
     if(!self.inningKd){
         //上半局
-        inning.guestScore = self.scoreCount;
+        _nowInning.guestScore = [NSString stringWithFormat:@"%d", self.scoreCount];
     }else{
         //下半局
-        inning.homeScore = self.scoreCount;
+        _nowInning.homeScore = [NSString stringWithFormat:@"%d", self.scoreCount];
     }
 
     //換局設定
@@ -236,10 +240,12 @@
     if(!self.inningKd){
        self.inning++;
         
-        if(self.game.inningArr.count != self.inning){
-            inning = [[Inning alloc]init];
-            inning.inning = self.inning;
-            [self.game.inningArr addObject:inning];
+        if(self.game.inningDetail.count != self.inning){
+            NSManagedObjectContext *context = [self.game managedObjectContext];
+            Inning *inning = (Inning *)[NSEntityDescription insertNewObjectForEntityForName:@"Inning" inManagedObjectContext:context];
+            inning.sn = [NSString stringWithFormat:@"%d", self.inning ];
+            [self.game addInningDetailObject:inning];
+            _nowInning = inning;
         }
     }
 
@@ -283,12 +289,11 @@
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     self.scoreCount = sender.value;
     self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.scoreCount];
-    
-    Inning *inning = self.game.inningArr[self.inning-1];
+
     if(!self.inningKd){
-        inning.guestScore = self.scoreCount;
+        _nowInning.guestScore = [NSString stringWithFormat:@"%d", self.scoreCount];
     }else{
-        inning.homeScore = self.scoreCount;
+        _nowInning.homeScore = [NSString stringWithFormat:@"%d", self.scoreCount];
     }
 }
 

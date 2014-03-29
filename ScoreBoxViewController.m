@@ -31,12 +31,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    if(self.game.inningArr == nil){
-        self.game.inningArr = [[NSMutableArray alloc]init];
-    }
 
-    self.guestNameLabel.text = self.game.guest_team_name;
-    self.homeNameLabel.text = self.game.home_team_name;
+    self.guestNameLabel.text = self.game.guestName;
+    self.homeNameLabel.text = self.game.homeName;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.game.inningArr.count+1;
+    return self.game.inningDetail.count+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,23 +73,27 @@
     }
     
     //設定欄位的內容與類型
-    if(indexPath.row == self.game.inningArr.count){
+    if(indexPath.row == self.game.inningDetail.count){
         cell.inningTextField.text = @"總分";
         int totalGuestScore = 0;
         int totalHomeScore = 0;
         Inning *inning;
-        for(int i = 0; i < self.game.inningArr.count; i++){
-            inning = self.game.inningArr[i];
-            totalGuestScore += inning.guestScore;
-            totalHomeScore += inning.homeScore;
+        for (inning in self.game.inningDetail) {
+            totalGuestScore += [inning.guestScore intValue];
+            totalHomeScore += [inning.homeScore intValue];
         }
         cell.guestScoreTextField.text = [[NSString alloc] initWithFormat:@"%d", totalGuestScore];
         cell.homeScoreTextField.text = [[NSString alloc] initWithFormat:@"%d", totalHomeScore];
     }else{
-        Inning *inning = [self.game.inningArr objectAtIndex:indexPath.row];
-        cell.inningTextField.text = [[NSString alloc] initWithFormat:@"%d",inning.inning];
-        cell.guestScoreTextField.text = [[NSString alloc] initWithFormat:@"%d",inning.guestScore];
-        cell.homeScoreTextField.text = [[NSString alloc] initWithFormat:@"%d",inning.homeScore];
+        Inning *inning;
+        for (inning in self.game.inningDetail) {
+            if([inning.sn intValue] == indexPath.row+1){
+                cell.inningTextField.text = inning.sn;
+                cell.guestScoreTextField.text = [[NSString alloc] initWithFormat:@"%d",[inning.guestScore intValue]];
+                cell.homeScoreTextField.text = [[NSString alloc] initWithFormat:@"%d",[inning.homeScore intValue]];
+                break;
+            }
+        }
     }
     
     return cell;

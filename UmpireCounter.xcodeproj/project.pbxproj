@@ -20,11 +20,12 @@
 		BE26C9C418C6146700EB81D0 /* UmpireCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE26C9C318C6146700EB81D0 /* UmpireCounterTests.m */; };
 		BE3A691C18CC2DC000665EF4 /* ScoreBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */; };
 		BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */; };
-		BE86243018C8482200F1E07F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86242F18C8482200F1E07F /* Game.m */; };
-		BE86243318C8482200F1E07F /* Inning.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86243218C8482200F1E07F /* Inning.m */; };
 		BE86243518C8485700F1E07F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE86243418C8485700F1E07F /* CoreData.framework */; };
 		BE86243718C8488E00F1E07F /* SettingParameter.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE86243618C8488E00F1E07F /* SettingParameter.plist */; };
 		BE86243A18C8749F00F1E07F /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86243918C8749F00F1E07F /* GameTableViewCell.m */; };
+		BE9B8AB518E6D9FA00F8E064 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6816118CAF6AE00A8C1AD /* iAd.framework */; };
+		BEA0DEF818DDD72200FDC05F /* Inning.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA0DEF718DDD72200FDC05F /* Inning.m */; };
+		BEA0DEFB18DDD8F000FDC05F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA0DEFA18DDD8F000FDC05F /* Game.m */; };
 		BEB6816018CAF43000A8C1AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB6815F18CAF43000A8C1AD /* Images.xcassets */; };
 		BEB6816518CAFF2F00A8C1AD /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6816418CAFF2F00A8C1AD /* CounterViewController.m */; };
 		BEB6816818CB0E2600A8C1AD /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6816718CB0E2600A8C1AD /* GameDetailViewController.m */; };
@@ -32,7 +33,7 @@
 		BEB6816D18CB3EA900A8C1AD /* CounterTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */; };
 		BEBC94B118C75BB10094513E /* GameListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B018C75BB10094513E /* GameListViewController.m */; };
 		BEBC94B718C75DDE0094513E /* AddGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B618C75DDE0094513E /* AddGameViewController.m */; };
-		BEBC94BA18C838C20094513E /* MOM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B818C838C20094513E /* MOM.xcdatamodeld */; };
+		BEBC94BA18C838C20094513E /* GameBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEBC94B818C838C20094513E /* GameBooks.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,14 +68,14 @@
 		BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoreBoxCell.h; path = ../ScoreBoxCell.h; sourceTree = "<group>"; };
 		BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoreBoxCell.m; path = ../ScoreBoxCell.m; sourceTree = "<group>"; };
 		BE53964118C8C68A00B9942A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		BE86242E18C8482200F1E07F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
-		BE86242F18C8482200F1E07F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
-		BE86243118C8482200F1E07F /* Inning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inning.h; path = Model/Inning.h; sourceTree = "<group>"; };
-		BE86243218C8482200F1E07F /* Inning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Inning.m; path = Model/Inning.m; sourceTree = "<group>"; };
 		BE86243418C8485700F1E07F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BE86243618C8488E00F1E07F /* SettingParameter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingParameter.plist; sourceTree = "<group>"; };
 		BE86243818C8749F00F1E07F /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		BE86243918C8749F00F1E07F /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
+		BEA0DEF618DDD72200FDC05F /* Inning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inning.h; path = Model/Inning.h; sourceTree = "<group>"; };
+		BEA0DEF718DDD72200FDC05F /* Inning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Inning.m; path = Model/Inning.m; sourceTree = "<group>"; };
+		BEA0DEF918DDD8F000FDC05F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
+		BEA0DEFA18DDD8F000FDC05F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
 		BEB6815F18CAF43000A8C1AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEB6816118CAF6AE00A8C1AD /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BEB6816318CAFF2F00A8C1AD /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		BEBC94B018C75BB10094513E /* GameListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListViewController.m; sourceTree = "<group>"; };
 		BEBC94B518C75DDE0094513E /* AddGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGameViewController.h; sourceTree = "<group>"; };
 		BEBC94B618C75DDE0094513E /* AddGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGameViewController.m; sourceTree = "<group>"; };
-		BEBC94B918C838C20094513E /* MOM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MOM.xcdatamodel; sourceTree = "<group>"; };
+		BEBC94B918C838C20094513E /* GameBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameBooks.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9B8AB518E6D9FA00F8E064 /* iAd.framework in Frameworks */,
 				BEB6816A18CB389700A8C1AD /* AudioToolbox.framework in Frameworks */,
 				BE86243518C8485700F1E07F /* CoreData.framework in Frameworks */,
 				BE26C99D18C6146700EB81D0 /* UIKit.framework in Frameworks */,
@@ -160,24 +162,24 @@
 				BEBC94B018C75BB10094513E /* GameListViewController.m */,
 				BEBC94B518C75DDE0094513E /* AddGameViewController.h */,
 				BEBC94B618C75DDE0094513E /* AddGameViewController.m */,
-				BE86242E18C8482200F1E07F /* Game.h */,
-				BE86243118C8482200F1E07F /* Inning.h */,
-				BE86243218C8482200F1E07F /* Inning.m */,
-				BE86242F18C8482200F1E07F /* Game.m */,
-				BEBC94B818C838C20094513E /* MOM.xcdatamodeld */,
+				BEA0DEF618DDD72200FDC05F /* Inning.h */,
+				BEA0DEF718DDD72200FDC05F /* Inning.m */,
+				BEBC94B818C838C20094513E /* GameBooks.xcdatamodeld */,
+				BEA0DEF918DDD8F000FDC05F /* Game.h */,
+				BEA0DEFA18DDD8F000FDC05F /* Game.m */,
 				BE86243618C8488E00F1E07F /* SettingParameter.plist */,
 				BE86243818C8749F00F1E07F /* GameTableViewCell.h */,
 				BE86243918C8749F00F1E07F /* GameTableViewCell.m */,
-				BEB6816318CAFF2F00A8C1AD /* CounterViewController.h */,
-				BEB6816418CAFF2F00A8C1AD /* CounterViewController.m */,
 				BEB6816618CB0E2600A8C1AD /* GameDetailViewController.h */,
 				BEB6816718CB0E2600A8C1AD /* GameDetailViewController.m */,
+				BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */,
+				BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */,
+				BEB6816318CAFF2F00A8C1AD /* CounterViewController.h */,
+				BEB6816418CAFF2F00A8C1AD /* CounterViewController.m */,
 				BE3A691D18CC2DEE00665EF4 /* ScoreBoxCell.h */,
 				BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */,
 				BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */,
 				BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */,
-				BEB6816B18CB3EA900A8C1AD /* CounterTabBarViewController.h */,
-				BEB6816C18CB3EA900A8C1AD /* CounterTabBarViewController.m */,
 			);
 			path = UmpireCounter;
 			sourceTree = "<group>";
@@ -311,16 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA0DEFB18DDD8F000FDC05F /* Game.m in Sources */,
 				BEBC94B118C75BB10094513E /* GameListViewController.m in Sources */,
-				BEBC94BA18C838C20094513E /* MOM.xcdatamodeld in Sources */,
+				BEBC94BA18C838C20094513E /* GameBooks.xcdatamodeld in Sources */,
 				BE26C9A918C6146700EB81D0 /* AppDelegate.m in Sources */,
 				BEB6816D18CB3EA900A8C1AD /* CounterTabBarViewController.m in Sources */,
 				BEB6816818CB0E2600A8C1AD /* GameDetailViewController.m in Sources */,
 				BEB6816518CAFF2F00A8C1AD /* CounterViewController.m in Sources */,
-				BE86243318C8482200F1E07F /* Inning.m in Sources */,
 				BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */,
+				BEA0DEF818DDD72200FDC05F /* Inning.m in Sources */,
 				BE26C9A518C6146700EB81D0 /* main.m in Sources */,
-				BE86243018C8482200F1E07F /* Game.m in Sources */,
 				BEBC94B718C75DDE0094513E /* AddGameViewController.m in Sources */,
 				BE86243A18C8749F00F1E07F /* GameTableViewCell.m in Sources */,
 				BE3A691C18CC2DC000665EF4 /* ScoreBoxViewController.m in Sources */,
@@ -542,13 +544,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BEBC94B818C838C20094513E /* MOM.xcdatamodeld */ = {
+		BEBC94B818C838C20094513E /* GameBooks.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BEBC94B918C838C20094513E /* MOM.xcdatamodel */,
+				BEBC94B918C838C20094513E /* GameBooks.xcdatamodel */,
 			);
-			currentVersion = BEBC94B918C838C20094513E /* MOM.xcdatamodel */;
-			path = MOM.xcdatamodeld;
+			currentVersion = BEBC94B918C838C20094513E /* GameBooks.xcdatamodel */;
+			path = GameBooks.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

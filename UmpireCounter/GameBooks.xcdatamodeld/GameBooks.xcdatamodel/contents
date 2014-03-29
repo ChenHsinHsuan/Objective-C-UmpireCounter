@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="ballType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="endTm" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fieldName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gfTm" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guestName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestScore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeScore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inningSet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeSet" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="inningDetail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Inning" inverseName="game" inverseEntity="Inning" syncable="YES"/>
+    </entity>
+    <entity name="Inning" representedClassName="Inning" syncable="YES">
+        <attribute name="guestScore" optional="YES" attributeType="String" minValueString="0" maxValueString="99" syncable="YES"/>
+        <attribute name="homeScore" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sn" optional="YES" attributeType="String" minValueString="1" maxValueString="9" syncable="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="inningDetail" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-632" positionY="176" width="128" height="223"/>
+        <element name="Inning" positionX="-405" positionY="302" width="128" height="103"/>
+    </elements>
+</model>
