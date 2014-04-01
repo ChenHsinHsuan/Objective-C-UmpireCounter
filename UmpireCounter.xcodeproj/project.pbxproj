@@ -23,6 +23,7 @@
 		BE86243518C8485700F1E07F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE86243418C8485700F1E07F /* CoreData.framework */; };
 		BE86243718C8488E00F1E07F /* SettingParameter.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE86243618C8488E00F1E07F /* SettingParameter.plist */; };
 		BE86243A18C8749F00F1E07F /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE86243918C8749F00F1E07F /* GameTableViewCell.m */; };
+		BE929E3E18EB05D500857E2B /* MyTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE929E3D18EB05D500857E2B /* MyTimer.m */; };
 		BE9B8AB518E6D9FA00F8E064 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6816118CAF6AE00A8C1AD /* iAd.framework */; };
 		BEA0DEF818DDD72200FDC05F /* Inning.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA0DEF718DDD72200FDC05F /* Inning.m */; };
 		BEA0DEFB18DDD8F000FDC05F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA0DEFA18DDD8F000FDC05F /* Game.m */; };
@@ -72,6 +73,8 @@
 		BE86243618C8488E00F1E07F /* SettingParameter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingParameter.plist; sourceTree = "<group>"; };
 		BE86243818C8749F00F1E07F /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		BE86243918C8749F00F1E07F /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
+		BE929E3C18EB05D500857E2B /* MyTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTimer.h; sourceTree = "<group>"; };
+		BE929E3D18EB05D500857E2B /* MyTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTimer.m; sourceTree = "<group>"; };
 		BEA0DEF618DDD72200FDC05F /* Inning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Inning.h; path = Model/Inning.h; sourceTree = "<group>"; };
 		BEA0DEF718DDD72200FDC05F /* Inning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Inning.m; path = Model/Inning.m; sourceTree = "<group>"; };
 		BEA0DEF918DDD8F000FDC05F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				BE3A691E18CC2DEE00665EF4 /* ScoreBoxCell.m */,
 				BE3A691A18CC2DC000665EF4 /* ScoreBoxViewController.h */,
 				BE3A691B18CC2DC000665EF4 /* ScoreBoxViewController.m */,
+				BE929E3C18EB05D500857E2B /* MyTimer.h */,
+				BE929E3D18EB05D500857E2B /* MyTimer.m */,
 			);
 			path = UmpireCounter;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				BEB6816518CAFF2F00A8C1AD /* CounterViewController.m in Sources */,
 				BE3A691F18CC2DEE00665EF4 /* ScoreBoxCell.m in Sources */,
 				BEA0DEF818DDD72200FDC05F /* Inning.m in Sources */,
+				BE929E3E18EB05D500857E2B /* MyTimer.m in Sources */,
 				BE26C9A518C6146700EB81D0 /* main.m in Sources */,
 				BEBC94B718C75DDE0094513E /* AddGameViewController.m in Sources */,
 				BE86243A18C8749F00F1E07F /* GameTableViewCell.m in Sources */,
