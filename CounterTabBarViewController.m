@@ -9,21 +9,14 @@
 #import "CounterTabBarViewController.h"
 #import "CounterViewController.h"
 #import "ScoreBoxViewController.h"
+#import "GameListViewController.h"
+#import "GameDetailViewController.h"
 #import "ScoreBoxCell.h"
 #import "Inning.h"
 @interface CounterTabBarViewController ()<UITabBarControllerDelegate, UIActionSheetDelegate>
 @end
 
 @implementation CounterTabBarViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -55,8 +48,23 @@
 {
     if(buttonIndex == 0){
         //結束比賽
+        
+        int totalGuestScore = 0;
+        int totalHomeScore = 0;
+        for (Inning *theInning in self.game.inningDetail){
+            totalGuestScore += [theInning.guestScore intValue];
+            totalHomeScore += [theInning.homeScore intValue];
+        }
+        self.game.homeScore = [NSString stringWithFormat:@"%d", totalHomeScore];
+        self.game.guestScore =[NSString stringWithFormat:@"%d", totalGuestScore];
+        self.game.completed = [NSNumber numberWithBool:YES];
+        self.game.endTm = [NSDate new];
+        
+//        GameListViewController *theGameListVC = (GameListViewController *) self.navigationController.presentedViewController.presentedViewController;
+//        [theGameListVC saveGame];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
+
 
 @end
