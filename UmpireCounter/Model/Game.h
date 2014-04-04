@@ -2,7 +2,7 @@
 //  Game.h
 //  UmpireCounter
 //
-//  Created by Chen Hsin-Hsuan on 2014/3/22.
+//  Created by Chen Hsin-Hsuan on 2014/4/4.
 //  Copyright (c) 2014年 com.aircon. All rights reserved.
 //
 

@@ -9,6 +9,8 @@
 #import "CounterViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "Inning.h"
+#import "MyTimer.h"
+#import "GameListViewController.h"
 @interface CounterViewController ()<UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *B1;
 @property (strong, nonatomic) IBOutlet UIButton *B2;
@@ -20,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *attackingTeamNameLabel;
 @property (strong, nonatomic) IBOutlet UIStepper *scoreStepper;
+@property (strong, nonatomic) IBOutlet UILabel *InningLabel;
 
 
 @property Inning *nowInning;
@@ -33,18 +36,15 @@
 
 @implementation CounterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    MyTimer *timer = [[MyTimer alloc]init];
+    [timer initTimerStartCountFrom:self.game.timeSet
+              WithTabBarController:self.tabBarController];
+    
     [self initLightAndScore];
     self.inning = 1;
     self.inningKd = NO;//NO:上半局  YES:下半局
@@ -57,9 +57,13 @@
     
         _nowInning = inning;
     }
-    
-    
     [self refreshInfo];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,10 +89,10 @@
 - (void) refreshInfo
 {
     if(!self.inningKd){
-        self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局上", self.inning];
+        self.InningLabel.text = [NSString stringWithFormat:@"%d局上", self.inning];
         self.attackingTeamNameLabel.text = self.game.guestName;
     }else{
-        self.tabBarController.navigationItem.title = [NSString stringWithFormat:@"%d局下", self.inning];
+        self.InningLabel.text = [NSString stringWithFormat:@"%d局下", self.inning];
         self.attackingTeamNameLabel.text = self.game.homeName;
     }
     
@@ -205,12 +209,53 @@
             self.sCount = 1;
         }
         self.oCount = 0;
+        
+        
+        int totalGuestScore = 0;
+        int totalHomeScore = 0;
+        for (Inning *theInning in self.game.inningDetail){
+            totalGuestScore += [theInning.guestScore intValue];
+            totalHomeScore += [theInning.homeScore intValue];
+        }
 
-        [self alertChangeInning];
+        
+        if(self.inning == [self.game.inningSet intValue]){
+            //比賽設定的局數已經到了
+            if (!self.inningKd) {
+                //上半局結束準備換下半局
+                if(totalHomeScore > totalGuestScore){
+                    //主場球隊獲勝，結束比賽
+                    [self alertGameSetAndHomeScroe:totalHomeScore GuestScore:totalGuestScore];
+                }else{
+                    [self alertChangeInning];
+                }
+            }else{
+                //下半局結束
+                [self alertGameSetAndHomeScroe:totalHomeScore GuestScore:totalGuestScore];
+            }
+            
+        }else{
+            [self alertChangeInning];
+        }
     }
     [self refreshLight];
 }
 
+- (void)alertGameSetAndHomeScroe:(int) iHomeScore GuestScore: (int) iGuestScore
+{
+    
+    
+    self.game.homeScore = [NSString stringWithFormat:@"%d", iHomeScore];
+    self.game.guestScore =[NSString stringWithFormat:@"%d", iGuestScore];
+    self.game.completed = [NSNumber numberWithBool:YES];
+    self.game.endTm = [NSDate new];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:[NSString stringWithFormat:@"%@ vs %@", self.game.guestName, self.game.homeName]
+                                                       message:[NSString stringWithFormat:@"%d - %d", iGuestScore, iHomeScore]
+                                                      delegate:self
+                                             cancelButtonTitle:@"結束比賽"
+                                             otherButtonTitles:nil, nil];
+    [alertView show];
+}
 
 - (void)alertChangeInning
 {
@@ -224,9 +269,7 @@
 
 - (void)changeInning
 {
-    //記錄每局的得分狀況
-//    Inning *inning = self.game.inningDetail.[self.inning-1];
-//
+
     if(!self.inningKd){
         //上半局
         _nowInning.guestScore = [NSString stringWithFormat:@"%d", self.scoreCount];
@@ -258,7 +301,15 @@
 #pragma -UIAlertView delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 {
+    if ([alertView.title isEqual:[NSString stringWithFormat:@"%@ vs %@", self.game.guestName, self.game.homeName]] && buttonIndex == 0) {
+        //比賽結束的做法
+//        GameListViewController *theGameListVC = (GameListViewController *) self.tabBarController.navigationController.presentedViewController.presentedViewController;
+//        [theGameListVC saveGame];
+        [self.tabBarController.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
     if(buttonIndex == 1){
+        //換局
         [self changeInning];
     }
 }
@@ -294,6 +345,20 @@
         _nowInning.guestScore = [NSString stringWithFormat:@"%d", self.scoreCount];
     }else{
         _nowInning.homeScore = [NSString stringWithFormat:@"%d", self.scoreCount];
+    }
+    
+    //最後半局得分就結束比賽
+    if(self.inning == [self.game.inningSet intValue]  && self.inningKd){
+        int totalGuestScore = 0;
+        int totalHomeScore = 0;
+        for (Inning *theInning in self.game.inningDetail){
+            totalGuestScore += [theInning.guestScore intValue];
+            totalHomeScore += [theInning.homeScore intValue];
+        }
+        
+        if (totalHomeScore > totalGuestScore) {
+            [self alertGameSetAndHomeScroe:totalHomeScore GuestScore:totalGuestScore];
+        }
     }
 }
 

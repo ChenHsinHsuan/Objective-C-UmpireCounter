@@ -34,8 +34,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _ballTypeTextField.text = self.game.ballType;
-    _gameTimeTextField.text = self.game.timeSet;
-    _inningSetTextField.text = self.game.inningSet;
+    _gameTimeTextField.text = [NSString stringWithFormat:@"%@ 分鐘", self.game.timeSet];
+    _inningSetTextField.text = [NSString stringWithFormat:@"%@ 局", self.game.inningSet];
     _fieldNameTextField.text = self.game.fieldName;
     _homeTeamTextField.text = self.game.homeName;
     _guestTeamTextField.text = self.game.guestName;

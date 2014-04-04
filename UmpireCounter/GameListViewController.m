@@ -12,6 +12,7 @@
 #import "AddGameViewController.h"
 #import "GameDetailViewController.h"
 #import "AppDelegate.h"
+#import "ScoreBoxViewController.h"
 @interface GameListViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UITableView *gameListTableView;
@@ -19,15 +20,6 @@
 @end
 
 @implementation GameListViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -38,7 +30,6 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -128,19 +119,12 @@
     Game *game = [_fetchedResultsController objectAtIndexPath:indexPath];
 
     cell.guestTeamNameLabel.text =  game.guestName;
-    cell.guestScoreLabel.text = game.guestScore;
     cell.homeTeamNameLabel.text = game.homeName;
-    cell.homeScoreLabel.text = game.homeScore;
     cell.fieldNameLabel.text = game.fieldName;
+    cell.guestScoreLabel.text = game.guestScore;
+    cell.homeScoreLabel.text = game.homeScore;
 
     
-    //    cell.textLabel.text = game.guest_team_name;
-    //    if (game.completed) {
-    //        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    //    } else {
-    //        cell.accessoryType = UITableViewCellAccessoryNone;
-    //    }
-
     return cell;
 }
 
@@ -150,7 +134,12 @@
     GameTableViewCell *cell = (GameTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if(cell != nil){
         self.selectGame =  [_fetchedResultsController objectAtIndexPath:indexPath];
-        [self performSegueWithIdentifier:@"gameDetail" sender:cell];
+        
+        if (self.selectGame.completed) {
+            [self performSegueWithIdentifier:@"GameScoreBox" sender:cell];
+        }else{
+            [self performSegueWithIdentifier:@"gameDetail" sender:cell];
+        }
     }
 
 }
@@ -193,14 +182,31 @@
     }
     
     if([segue.identifier isEqualToString:@"AddGame"]){
-        Game *newGame = (Game *)[NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.managedObjectContext];
+        Game *newGame = (Game *)[NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:_managedObjectContext];
         AddGameViewController *addGameVC = [segue destinationViewController];
         addGameVC.game = newGame;
     }
-
+    
+    if([segue.identifier isEqualToString:@"GameScoreBox"]){
+        ScoreBoxViewController *destVC = [segue destinationViewController];
+        destVC.game = self.selectGame;
+    }
+    
 }
 
-- (IBAction)addGameToList:(UIStoryboardSegue *)segue
+- (IBAction)saveGameToList:(UIStoryboardSegue *)segue
+{
+    [self saveGame];
+}
+
+-(IBAction)CancelAddGameToList:(UIStoryboardSegue *)segue
+{
+    AddGameViewController *addGameVC = [segue sourceViewController];
+    [_managedObjectContext deleteObject:addGameVC.game];
+}
+
+
+-(void)saveGame
 {
     NSError *error;
     if (_managedObjectContext != nil) {

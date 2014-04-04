@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 @interface GameListViewController : UIViewController<NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-- (IBAction)addGameToList:(UIStoryboardSegue *)segue;
+- (IBAction)saveGameToList:(UIStoryboardSegue *)segue;
+-(IBAction)CancelAddGameToList:(UIStoryboardSegue *)segue;
+-(void)saveGame;
 @end

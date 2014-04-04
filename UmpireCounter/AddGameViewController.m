@@ -24,15 +24,6 @@
 
 @implementation AddGameViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -58,7 +49,7 @@
 #pragma -segue
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (sender != self.createGameButton) {
+    if (sender == self.navigationItem.leftBarButtonItem) {
         return;
     }
     
