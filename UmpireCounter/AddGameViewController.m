@@ -74,7 +74,7 @@
     self.game.gfTm = [NSDate date];
     self.game.inningSet = self.inningArr[[self.inningAndTimePickerView selectedRowInComponent:0]];
     self.game.timeSet = self.gameTimeArr[[self.inningAndTimePickerView selectedRowInComponent:1]];
-    self.game.completed = NO;
+    self.game.completed = [NSNumber numberWithBool:NO];
     
 }
 

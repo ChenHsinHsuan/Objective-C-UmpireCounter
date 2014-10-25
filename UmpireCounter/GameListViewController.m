@@ -134,8 +134,7 @@
     GameTableViewCell *cell = (GameTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if(cell != nil){
         self.selectGame =  [_fetchedResultsController objectAtIndexPath:indexPath];
-        
-        if (self.selectGame.completed) {
+        if (self.selectGame.completed == [NSNumber numberWithBool:YES]) {
             [self performSegueWithIdentifier:@"GameScoreBox" sender:cell];
         }else{
             [self performSegueWithIdentifier:@"gameDetail" sender:cell];

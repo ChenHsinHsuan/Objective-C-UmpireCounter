@@ -7,11 +7,10 @@
 //
 
 #import "CounterViewController.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import "Inning.h"
 #import "MyTimer.h"
 #import "GameListViewController.h"
-@interface CounterViewController ()<UIAlertViewDelegate>
+@interface CounterViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *B1;
 @property (strong, nonatomic) IBOutlet UIButton *B2;
 @property (strong, nonatomic) IBOutlet UIButton *B3;
@@ -40,6 +39,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Make self the delegate of the ad banner.
+    self.adBanner.delegate = self;
+    // Initially hide the ad banner.
+    self.adBanner.alpha = 0.0;
 
     MyTimer *timer = [[MyTimer alloc]init];
     [timer initTimerStartCountFrom:self.game.timeSet
@@ -75,6 +79,12 @@
 
 - (void) initLightAndScore
 {
+    [self initLight];
+    self.scoreCount = 0;
+}
+
+- (void) initLight
+{
     if([self.game.ballType isEqualToString: @"棒球"]){
         self.bCount = 0;
         self.sCount = 0;
@@ -83,7 +93,6 @@
         self.sCount = 1;
     }
     self.oCount = 0;
-    self.scoreCount = 0;
 }
 
 - (void) refreshInfo
@@ -360,6 +369,51 @@
             [self alertGameSetAndHomeScroe:totalHomeScore GuestScore:totalGuestScore];
         }
     }
+}
+- (IBAction)hitsButtonPressed:(id)sender {
+    if([self.game.ballType isEqualToString: @"棒球"]){
+        self.bCount = 0;
+        self.sCount = 0;
+    }else{
+        self.bCount = 1;
+        self.sCount = 1;
+    }
+    [self refreshLight];
+}
+
+
+#pragma adbanner
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
+}
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 1.0;
+    }];
+    
+}
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    
+    return YES;
+}
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // Hide the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 0.0;
+    }];
 }
 
 @end

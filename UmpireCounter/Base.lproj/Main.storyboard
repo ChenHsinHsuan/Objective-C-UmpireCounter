@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="I0R-5t-8jb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="I0R-5t-8jb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Game List View Controller - 賽程清單-->
+        <!--賽程清單-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="GameListViewController" sceneMemberID="viewController">
@@ -18,7 +19,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="106" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-xM-jwE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="106" id="0zD-DX-0yy" customClass="GameTableViewCell">
@@ -30,42 +30,36 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtY-s2-y1C">
                                                     <rect key="frame" x="145" y="28" width="30" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YP-Ee-jdA">
                                                     <rect key="frame" x="200" y="13" width="80" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-QM-azT">
                                                     <rect key="frame" x="40" y="13" width="80" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN1-mq-dq3">
                                                     <rect key="frame" x="0.0" y="13" width="160" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="後攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAV-Eb-hNa">
                                                     <rect key="frame" x="160" y="13" width="160" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＠球場名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-8u-adK">
                                                     <rect key="frame" x="56" y="79" width="208" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.078431375319999996" green="0.043137256059999997" blue="0.1647058874" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -86,10 +80,6 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="nQf-de-ds4"/>
                                 </connections>
                             </tableView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3z-Ba-iuZ">
-                                <rect key="frame" x="0.0" y="518" width="320" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </adBannerView>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="賽程清單" id="XZc-3i-ACE">
@@ -109,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="-696" y="408"/>
         </scene>
-        <!--Add Game View Controller - Title-->
+        <!--Title-->
         <scene sceneID="Io1-0y-aSg">
             <objects>
                 <viewController id="7kN-kv-mMe" customClass="AddGameViewController" sceneMemberID="viewController">
@@ -123,7 +113,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="後攻球隊名稱" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fyT-vc-XlF">
                                 <rect key="frame" x="40" y="205" width="240" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.098238140099999996" blue="0.19417814459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
@@ -133,7 +122,6 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="先攻球隊名稱" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-bQ-dld">
                                 <rect key="frame" x="40" y="145" width="240" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.098238140099999996" blue="0.19417814459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
@@ -143,19 +131,16 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比賽局數" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3t-sT-xDS">
                                 <rect key="frame" x="52" y="322" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="限定時間(分)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-ZU-enl">
                                 <rect key="frame" x="186" y="322" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZSs-wg-5kf">
                                 <rect key="frame" x="40" y="94" width="240" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="棒球"/>
                                     <segment title="壘球"/>
@@ -167,7 +152,6 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5T-84-S98">
                                 <rect key="frame" x="110" y="506" width="100" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="建立比賽">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +162,6 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="球場名稱" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="492-Ww-4lV">
                                 <rect key="frame" x="40" y="266" width="240" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.098238140099999996" blue="0.19417814459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
@@ -188,11 +171,9 @@
                             </textField>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NHX-48-I6o">
                                 <rect key="frame" x="40" y="351" width="240" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pickerView multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRW-BN-Bky">
                                         <rect key="frame" x="-40" y="-27" width="320" height="162"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="7kN-kv-mMe" id="dii-9X-FLQ"/>
                                             <outlet property="delegate" destination="7kN-kv-mMe" id="41e-c7-zWq"/>
@@ -230,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="-255" y="-143"/>
         </scene>
-        <!--Game Detail View Controller - 比賽場次資料-->
+        <!--比賽場次資料-->
         <scene sceneID="nap-Y3-38z">
             <objects>
                 <viewController id="0Wx-iG-CNr" customClass="GameDetailViewController" sceneMemberID="viewController">
@@ -244,11 +225,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseball" translatesAutoresizingMaskIntoConstraints="NO" id="pOi-Tx-uoV">
                                 <rect key="frame" x="0.0" y="36" width="320" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cD0-ta-cN9">
                                 <rect key="frame" x="0.0" y="506" width="320" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="開始比賽">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -259,69 +238,58 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先攻球隊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-ds-n14">
                                 <rect key="frame" x="37" y="408" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="後攻球隊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv0-cM-007">
                                 <rect key="frame" x="37" y="456" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比賽局數" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXG-SR-JcZ">
                                 <rect key="frame" x="37" y="310" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比賽時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slx-bG-q6E">
                                 <rect key="frame" x="37" y="259" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比賽球種" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noo-ys-eiA">
                                 <rect key="frame" x="-21" y="81" width="184" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="比賽球場" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4M-8U-gcU">
                                 <rect key="frame" x="37" y="359" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="gameTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ST-7A-1YF">
                                 <rect key="frame" x="168" y="259" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="inningSet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHa-XC-oUn">
                                 <rect key="frame" x="168" y="310" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="filedName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVM-p2-zia">
                                 <rect key="frame" x="168" y="359" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="guestTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZb-Ac-cIw">
                                 <rect key="frame" x="168" y="408" width="132" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="homeTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-9E-Ydu">
                                 <rect key="frame" x="168" y="456" width="132" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -350,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="-368" y="1120"/>
         </scene>
-        <!--Counter View Controller - 計數器-->
+        <!--計數器-->
         <scene sceneID="Xqp-L0-9k6">
             <objects>
                 <viewController id="7Ro-21-jlk" customClass="CounterViewController" sceneMemberID="viewController">
@@ -362,181 +330,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="C0K-f1-PuK">
-                                <rect key="frame" x="10" y="154" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="stepperPressed:" destination="7Ro-21-jlk" eventType="valueChanged" id="qPr-l9-zpR"/>
-                                </connections>
-                            </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-E3-pLX">
-                                <rect key="frame" x="65" y="273" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="green"/>
-                                <connections>
-                                    <action selector="B1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="2bO-I3-g4F"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krP-ZF-irQ">
-                                <rect key="frame" x="5" y="191" width="52" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="ajy-Q9-bbS"/>
-                                    <constraint firstAttribute="height" constant="80" id="tk7-vb-bgj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXh-v5-CEp">
-                                <rect key="frame" x="5" y="273" width="52" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="zwj-ks-v1V"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="588-BS-MNG">
-                                <rect key="frame" x="5" y="355" width="52" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Zwf-Mm-c9K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djj-fS-gSH">
-                                <rect key="frame" x="147" y="273" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="green"/>
-                                <connections>
-                                    <action selector="B2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="ACZ-Ig-cYp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-T5-O2W">
-                                <rect key="frame" x="235" y="273" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="green"/>
-                                <connections>
-                                    <action selector="B3ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="yW1-ol-bfH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJt-co-WS7">
-                                <rect key="frame" x="65" y="191" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="hIL-Bz-Rwv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="yellow"/>
-                                <connections>
-                                    <action selector="S1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="B5Z-QX-wF3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5x3-W7-Rgu">
-                                <rect key="frame" x="147" y="191" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="yellow"/>
-                                <connections>
-                                    <action selector="S2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="Vdi-hN-DyA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvA-TQ-e1X">
-                                <rect key="frame" x="65" y="355" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="red"/>
-                                <connections>
-                                    <action selector="O1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="Ulv-eX-xWC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-EW-607">
-                                <rect key="frame" x="147" y="355" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Button" image="black"/>
-                                <state key="selected" image="red"/>
-                                <connections>
-                                    <action selector="O2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="4uq-Xl-kIw"/>
-                                </connections>
-                            </button>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-qp-bUj">
-                                <rect key="frame" x="167" y="72" width="145" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.1080512282" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N局上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-Zg-EqM">
-                                <rect key="frame" x="10" y="70" width="94" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="進攻球隊名稱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-hI-kV0">
-                                <rect key="frame" x="10" y="102" width="302" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-UA-VGR">
-                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </adBannerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-7P-Wxm">
+                                <rect key="frame" x="-20" y="52" width="360" height="487"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bT8-E3-pLX">
+                                        <rect key="frame" x="85" y="221" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="green"/>
+                                        <connections>
+                                            <action selector="B1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="2bO-I3-g4F"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXh-v5-CEp">
+                                        <rect key="frame" x="25" y="221" width="52" height="80"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-EW-607">
+                                        <rect key="frame" x="167" y="303" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="red"/>
+                                        <connections>
+                                            <action selector="O2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="4uq-Xl-kIw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzr-1f-wlb">
+                                        <rect key="frame" x="272" y="328" width="46" height="30"/>
+                                        <state key="normal" title="安打">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hitsButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="kV8-2M-GEO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-T5-O2W">
+                                        <rect key="frame" x="255" y="221" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="green"/>
+                                        <connections>
+                                            <action selector="B3ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="yW1-ol-bfH"/>
+                                        </connections>
+                                    </button>
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="C0K-f1-PuK">
+                                        <rect key="frame" x="30" y="102" width="94" height="29"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="stepperPressed:" destination="7Ro-21-jlk" eventType="valueChanged" id="qPr-l9-zpR"/>
+                                        </connections>
+                                    </stepper>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djj-fS-gSH">
+                                        <rect key="frame" x="167" y="221" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="green"/>
+                                        <connections>
+                                            <action selector="B2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="ACZ-Ig-cYp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5x3-W7-Rgu">
+                                        <rect key="frame" x="167" y="139" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="yellow"/>
+                                        <connections>
+                                            <action selector="S2ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="Vdi-hN-DyA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="588-BS-MNG">
+                                        <rect key="frame" x="25" y="303" width="52" height="80"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJt-co-WS7">
+                                        <rect key="frame" x="85" y="139" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="yellow"/>
+                                        <connections>
+                                            <action selector="S1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="B5Z-QX-wF3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krP-ZF-irQ">
+                                        <rect key="frame" x="25" y="139" width="52" height="80"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="80"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvA-TQ-e1X">
+                                        <rect key="frame" x="85" y="303" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Button" image="black"/>
+                                        <state key="selected" image="red"/>
+                                        <connections>
+                                            <action selector="O1ButtonPressed:" destination="7Ro-21-jlk" eventType="touchUpInside" id="Ulv-eX-xWC"/>
+                                        </connections>
+                                    </button>
+                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-qp-bUj">
+                                        <rect key="frame" x="187" y="20" width="145" height="120"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.1080512282" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwB-gj-tYt">
+                                        <rect key="frame" x="20" y="417" width="320" height="50"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="7Ro-21-jlk" id="IMZ-h3-DnR"/>
+                                        </connections>
+                                    </adBannerView>
+                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="進攻球隊名稱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-hI-kV0">
+                                        <rect key="frame" x="30" y="50" width="302" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N局上" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgO-Zg-EqM">
+                                        <rect key="frame" x="30" y="28" width="94" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="vvA-TQ-e1X" firstAttribute="leading" secondItem="bT8-E3-pLX" secondAttribute="leading" id="1Fw-UT-u4u"/>
-                            <constraint firstAttribute="trailing" secondItem="5x3-W7-Rgu" secondAttribute="trailing" constant="93" id="2o0-Dc-ARq"/>
-                            <constraint firstItem="GJt-co-WS7" firstAttribute="leading" secondItem="krP-ZF-irQ" secondAttribute="trailing" constant="8" symbolic="YES" id="3Df-Ym-vxf"/>
-                            <constraint firstItem="5x3-W7-Rgu" firstAttribute="bottom" secondItem="GJt-co-WS7" secondAttribute="bottom" id="4M2-ge-EMk"/>
-                            <constraint firstItem="Uht-UA-VGR" firstAttribute="top" secondItem="588-BS-MNG" secondAttribute="bottom" constant="34" id="4h2-cj-SvH"/>
-                            <constraint firstItem="vvA-TQ-e1X" firstAttribute="leading" secondItem="588-BS-MNG" secondAttribute="trailing" constant="8" symbolic="YES" id="9po-vj-AQE"/>
-                            <constraint firstItem="krP-ZF-irQ" firstAttribute="leading" secondItem="EXh-v5-CEp" secondAttribute="leading" id="A9K-qq-au7"/>
-                            <constraint firstItem="EXh-v5-CEp" firstAttribute="top" secondItem="krP-ZF-irQ" secondAttribute="bottom" constant="2" id="CMK-Nz-x2R"/>
-                            <constraint firstItem="5x3-W7-Rgu" firstAttribute="top" secondItem="qkS-hI-kV0" secondAttribute="bottom" constant="53" id="DBM-wQ-SoG"/>
-                            <constraint firstItem="krP-ZF-irQ" firstAttribute="leading" secondItem="7J4-cB-3UN" secondAttribute="leading" constant="5" id="E6f-JY-xQ7"/>
-                            <constraint firstItem="EXh-v5-CEp" firstAttribute="top" secondItem="bT8-E3-pLX" secondAttribute="top" id="Fm5-lA-2Vo"/>
-                            <constraint firstItem="EXh-v5-CEp" firstAttribute="leading" secondItem="588-BS-MNG" secondAttribute="leading" id="GrL-yu-k7Y"/>
-                            <constraint firstItem="n0L-T5-O2W" firstAttribute="leading" secondItem="djj-fS-gSH" secondAttribute="trailing" constant="8" symbolic="YES" id="M0b-fy-i0O"/>
-                            <constraint firstItem="krP-ZF-irQ" firstAttribute="top" secondItem="C0K-f1-PuK" secondAttribute="bottom" constant="8" symbolic="YES" id="O7y-Ka-EbD"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="top" secondItem="n0L-T5-O2W" secondAttribute="top" id="RoG-g8-U9h"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="leading" secondItem="uf9-EW-607" secondAttribute="leading" id="Sno-o9-qy8"/>
-                            <constraint firstItem="uf9-EW-607" firstAttribute="bottom" secondItem="vvA-TQ-e1X" secondAttribute="bottom" id="UrI-6M-382"/>
-                            <constraint firstItem="GJt-co-WS7" firstAttribute="top" secondItem="C0K-f1-PuK" secondAttribute="bottom" constant="8" symbolic="YES" id="V7j-So-PPv"/>
-                            <constraint firstItem="n0L-T5-O2W" firstAttribute="top" secondItem="DyD-qp-bUj" secondAttribute="bottom" constant="81" id="Vwa-iF-ihJ"/>
-                            <constraint firstItem="bT8-E3-pLX" firstAttribute="trailing" secondItem="GJt-co-WS7" secondAttribute="trailing" id="Wx2-cb-TmG"/>
-                            <constraint firstItem="bT8-E3-pLX" firstAttribute="leading" secondItem="EXh-v5-CEp" secondAttribute="trailing" constant="8" symbolic="YES" id="YoN-TN-s3P"/>
-                            <constraint firstItem="bT8-E3-pLX" firstAttribute="bottom" secondItem="EXh-v5-CEp" secondAttribute="bottom" id="Zhc-OJ-5Qn"/>
-                            <constraint firstItem="588-BS-MNG" firstAttribute="bottom" secondItem="vvA-TQ-e1X" secondAttribute="bottom" id="a5l-QI-DxO"/>
-                            <constraint firstAttribute="trailing" secondItem="n0L-T5-O2W" secondAttribute="trailing" constant="5" id="a5x-SK-OsC"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="leading" secondItem="5x3-W7-Rgu" secondAttribute="leading" id="aKM-Qu-hKe"/>
-                            <constraint firstItem="uf9-EW-607" firstAttribute="top" secondItem="vvA-TQ-e1X" secondAttribute="top" id="csa-fq-DwM"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="bottom" secondItem="n0L-T5-O2W" secondAttribute="bottom" id="daH-jg-Sa0"/>
-                            <constraint firstItem="uf9-EW-607" firstAttribute="trailing" secondItem="djj-fS-gSH" secondAttribute="trailing" id="e6x-GK-RT9"/>
-                            <constraint firstItem="GJt-co-WS7" firstAttribute="leading" secondItem="bT8-E3-pLX" secondAttribute="leading" id="ezi-F1-lCa"/>
-                            <constraint firstItem="5x3-W7-Rgu" firstAttribute="leading" secondItem="GJt-co-WS7" secondAttribute="trailing" constant="2" id="fda-cb-gMc"/>
-                            <constraint firstItem="krP-ZF-irQ" firstAttribute="top" secondItem="7J4-cB-3UN" secondAttribute="top" constant="191" id="h30-AN-abo"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="top" secondItem="bT8-E3-pLX" secondAttribute="top" id="icm-k5-twv"/>
-                            <constraint firstItem="5x3-W7-Rgu" firstAttribute="top" secondItem="GJt-co-WS7" secondAttribute="top" id="mXG-f0-0cg"/>
-                            <constraint firstItem="vvA-TQ-e1X" firstAttribute="top" secondItem="588-BS-MNG" secondAttribute="top" id="sg1-JJ-DKb"/>
-                            <constraint firstItem="djj-fS-gSH" firstAttribute="bottom" secondItem="bT8-E3-pLX" secondAttribute="bottom" id="t7A-7H-QKA"/>
-                            <constraint firstItem="vvA-TQ-e1X" firstAttribute="trailing" secondItem="bT8-E3-pLX" secondAttribute="trailing" id="wBC-p5-Ss0"/>
-                            <constraint firstItem="5x3-W7-Rgu" firstAttribute="trailing" secondItem="djj-fS-gSH" secondAttribute="trailing" id="xdP-ha-7gB"/>
-                            <constraint firstItem="588-BS-MNG" firstAttribute="top" secondItem="EXh-v5-CEp" secondAttribute="bottom" constant="2" id="ydi-ed-poP"/>
-                            <constraint firstItem="krP-ZF-irQ" firstAttribute="bottom" secondItem="GJt-co-WS7" secondAttribute="bottom" id="zHe-h7-xGC"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="計數器" image="pulley-50" id="m42-tB-tsk"/>
                     <navigationItem key="navigationItem" id="JmZ-zy-VTp"/>
@@ -549,6 +466,7 @@
                         <outlet property="O2" destination="uf9-EW-607" id="dh8-s0-2aF"/>
                         <outlet property="S1" destination="GJt-co-WS7" id="cTH-CD-UDp"/>
                         <outlet property="S2" destination="5x3-W7-Rgu" id="NwG-ml-Bwa"/>
+                        <outlet property="adBanner" destination="OwB-gj-tYt" id="IMd-vO-c2h"/>
                         <outlet property="attackingTeamNameLabel" destination="qkS-hI-kV0" id="JLd-nR-iT1"/>
                         <outlet property="scoreLabel" destination="DyD-qp-bUj" id="hyU-C1-2rt"/>
                         <outlet property="scoreStepper" destination="C0K-f1-PuK" id="n4j-8o-tXm"/>
@@ -558,7 +476,7 @@
             </objects>
             <point key="canvasLocation" x="482" y="1113"/>
         </scene>
-        <!--Score Box View Controller - 計分板-->
+        <!--計分板-->
         <scene sceneID="sQ8-58-u0W">
             <objects>
                 <viewController id="piN-xN-kU2" customClass="ScoreBoxViewController" sceneMemberID="viewController">
@@ -572,21 +490,18 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-if-Ges">
                                 <rect key="frame" x="0.0" y="74" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="後攻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ4-Of-0co">
                                 <rect key="frame" x="170" y="74" width="150" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QB1-1o-ZRz">
                                 <rect key="frame" x="-5" y="96" width="330" height="421"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScoreBoxCell" rowHeight="59" id="oBx-8C-T8A" customClass="ScoreBoxCell">
@@ -598,21 +513,18 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka0-dp-apb">
                                                     <rect key="frame" x="125" y="13" width="80" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <color key="textColor" red="1" green="0.98139389990000003" blue="0.96603248269999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHt-nu-vRs">
                                                     <rect key="frame" x="20" y="-2" width="100" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Od-od-mxW">
                                                     <rect key="frame" x="213" y="-2" width="100" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -633,10 +545,6 @@
                                     <outlet property="delegate" destination="piN-xN-kU2" id="EbY-i2-D7g"/>
                                 </connections>
                             </tableView>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpF-je-Rig">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.52757185218978087" blue="0.26824817519999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -652,7 +560,7 @@
             </objects>
             <point key="canvasLocation" x="564" y="408"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="hJ5-C4-vbi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I0R-5t-8jb" sceneMemberID="viewController">
@@ -685,7 +593,6 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="79B-jY-4m7">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -714,6 +621,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4ug-qx-Ve4"/>
+        <segue reference="8hV-Ub-kbv"/>
     </inferredMetricsTieBreakers>
 </document>

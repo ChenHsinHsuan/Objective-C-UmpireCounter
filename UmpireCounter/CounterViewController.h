@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Game.h"
-@interface CounterViewController : UIViewController
+#import <iAd/iAd.h>
+#import <AudioToolbox/AudioToolbox.h>
+@interface CounterViewController : UIViewController<UIAlertViewDelegate, ADBannerViewDelegate>
 @property Game *game;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
 @end

@@ -10,39 +10,29 @@
 	<string>UmpireCounter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>351165D8-B9AA-4A30-A393-44987DDC5E7F</key>
+		<key>583CA288223327339195B91187A837B20A688D34</key>
 		<string>https://github.com/ChenHsinHsuan/UmpireCounter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UmpireCounter.xcodeproj/project.xcworkspace</string>
+	<string>UmpireCounter.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>351165D8-B9AA-4A30-A393-44987DDC5E7F</key>
+		<key>583CA288223327339195B91187A837B20A688D34</key>
 		<string>../..</string>
-		<key>73D34275-7959-4EEB-B1EC-671CE4279BCC</key>
-		<string>../../UmpireCounter</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ChenHsinHsuan/UmpireCounter.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>351165D8-B9AA-4A30-A393-44987DDC5E7F</string>
+	<string>583CA288223327339195B91187A837B20A688D34</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>351165D8-B9AA-4A30-A393-44987DDC5E7F</string>
-			<key>IDESourceControlWCCName</key>
-			<string>UmpireCounter</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>73D34275-7959-4EEB-B1EC-671CE4279BCC</string>
+			<string>583CA288223327339195B91187A837B20A688D34</string>
 			<key>IDESourceControlWCCName</key>
 			<string>UmpireCounter</string>
 		</dict>
